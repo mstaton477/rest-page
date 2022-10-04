@@ -1,0 +1,277 @@
+body{
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.content{
+    margin: 5vh;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    height: 100%; 
+    width: 100vw; 
+    overflow: hidden;
+    transition: .6s all;
+}
+
+.content.close{
+    width: 0vw; 
+}
+
+.content.hide{
+    opacity: .2;
+}
+
+h4{
+    margin: 0; 
+    font-size: 4vh;
+    font-family: 'Inter Tight', sans-serif;
+}
+
+#imgBox{
+    color: white; 
+    height: 80vh; 
+    width: 90vw; 
+    background-image: url('./assets/giovanni-s-dining-room.jpg');
+    font-size: 15vw; 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    overflow: hidden; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.imgBoxMenu{
+    color: white; 
+    height: 80vh; 
+    width: 90vw; 
+    font-size: 15vw;
+    transition: 1s all;
+    background-image: url('./assets/menu.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+#imgBoxAbout {
+    color:black;
+    height: 40vh;
+    width: 100vw;
+    font-size: 10vh;
+    background-size:cover;
+    background-position: center;
+    background-repeat:no-repeat;
+    overflow: hidden;
+    padding-top: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menuBox{
+    width: 0px;
+    height:60vh;
+    opacity: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: .5s all;
+    padding-bottom: 5%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.menuBox.open{
+    opacity: 1;
+    width:94vw;
+}
+.menuImg{
+    width: 600px;
+}
+
+h6{
+    font-size: 4vw;
+    margin-top: -50px;
+    margin-left: 43vw;
+    color: white;
+}
+
+.titleText{
+    
+    font-family: 'Chivo';
+    font-weight: 300;
+    font-style:italic;
+    margin: 0;
+    color: slateblue;
+}
+.titleTextArrow{
+    transition: 1s all;
+    position: absolute;
+    font-size: 5vh;
+    transform: rotate(180deg);
+ 
+    font-family: 'Chivo';
+    font-weight: 300;
+    font-style:italic;
+    margin: 0;
+    color: slateblue;
+}
+#map {
+    margin-top: 7vh;
+    height: 80vh;
+    width: 30vw;
+
+  }
+  
+.aboutContainer{
+    margin-top: 7vh;
+    height: 80vh;
+    width: 70vw;
+    background-color: rgba(0, 0, 0, 0.08);
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    overflow-y: scroll;
+}
+#openBtn{
+    color:rgba(0, 0, 0, 0.8);
+    opacity: 1;
+    text-decoration: none;
+}
+#openBtn:hover{
+    color: slateblue;
+    text-decoration: underline;
+}
+/* navBar */
+.navBar{
+    height: 8vh ;
+    width: 94vw;
+    position: fixed;
+    top: 5.3vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-family: 'Chivo';
+    font-weight: 300;
+}
+.navBar.whiteBack{
+    background-color: white;
+}
+.navlink{
+    margin-right: 3%;
+    font-size: 2.5vh;
+    text-decoration:none;
+    color:white;
+    transition: 1.5s all;
+}
+.navlink.menupage{
+    color:black;
+}
+.navlink:hover{
+    color: slateblue;
+    
+}
+.navlink.active{
+    color: slateblue;
+}
+h2{
+    font-family: 'Chivo';
+    font-weight: 700;
+    font-size: 5vw;
+    margin-bottom:0 ;
+    font-style: italic;
+    color: slateblue;
+    
+}
+b{
+    color: slateblue;
+}
+#para{
+    font-family: 'Chivo';
+    font-weight: 300;
+    font-size: 1.5vw;
+}
+
+@media only screen and (max-width: 1000px) {
+    .navBar{
+        justify-content: center;
+    }
+    .content{
+        flex-direction: column;
+    }
+    .menuBox{
+        opacity: 1;
+        width:94vw;
+        height: 100%;
+    }
+    .content{
+        margin:0; 
+        margin-top: 3%;
+    }
+    #openBtn{
+        display: none;
+    }
+    #menuImg{
+        width: 94vw;
+    }
+    #imgBox{
+        height:93vh;
+    }
+    .navBar{
+        background-color:white ;
+        top:0px;
+        height: 10vh;
+        width: 100vw;
+        justify-content: space-around;
+    }
+    .navlink{
+        color:black;
+    }
+    .menuImg{
+        width: 85vw;
+    }
+    #imgBoxMenu{
+        height: 40vh;
+    }
+
+    h6{
+        margin-top: 0px;
+        margin-left:20vw;
+    }
+
+    #map {
+        margin-top: 7vh;
+        height: 32vh;
+        width:95vw;
+      }
+      
+    .aboutContainer{
+        margin-top: 0px;
+        padding: 5%;
+        height: 100%;
+        width: 95vw;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.08);
+        align-items: center;
+        justify-content: center;
+    }
+    h2{
+        font-family: 'Chivo';
+        font-weight: 700;
+        font-size: 10vw;
+        margin-bottom:0 ;
+        font-style: italic; 
+    }
+    #para{
+        font-family: 'Chivo';
+        font-weight: 300;
+        font-size: 4vw;
+    }
+  }
