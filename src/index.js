@@ -1,54 +1,19 @@
-import { menuFactory, slideshowtog } from './menu';
-import {aboutCreate} from './about'
-import {NavBar} from './NavBar'
-import { homeFactory, pageLoad } from './home';
+import loadPage from './modules/loadInitPage.js';
+import loadMenu from './modules/loadMenu.js';
+import loadHome from './modules/loadHome.js';
 
-const content = document.querySelector('.content')
+init();
 
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+function addNavEvents(){
+    const homebtn = document.getElementById('home');
+    const menubtn = document.getElementById('menu');
+
+    homebtn.addEventListener('click',loadHome);
+    menubtn.addEventListener('click',loadMenu);
 }
 
-const tabswitch = async(e) =>{
-    let target = e.target.id;
-    let current = NavBar.getcurrent();
-    
-    NavBar.toggleActive(target)
-    
-    if(target === current){
-        return;
-    }
-    if(current === 'menu'){
-        slideshowtog();
-    }
-    content.classList.toggle('hide')
-    await sleep(200);
-    content.classList.toggle('close')
-    await sleep(700);
-    
-    content.innerHTML = ''
-    switch(target){
-        case 'menu':
-            menuFactory(content);
-            slideshowtog();
-            break;
-        case 'home':
-            homeFactory(content)
-            break;
-        case 'about':
-            aboutFactory(content);
-            break;
-    }
-    content.classList.toggle('close')
-    await sleep(200);
-    content.classList.toggle('hide')
-    await sleep(400);    
-}
-    
-//initial page load
-pageLoad(content);
-
-export{
-    sleep,
-    tabswitch
+function init(){
+    loadPage();
+    loadHome();
+    addNavEvents();
 }
